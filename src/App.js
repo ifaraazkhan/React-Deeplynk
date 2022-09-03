@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import PageScrollTop from './components/pageToTop/PageScrollTop'
+import HomeDefault from "./pages/HomeDefault";
+// Import Css Here 
+import './assets/scss/style.scss';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+            <PageScrollTop>
+                <Switch>
+                    <Route path={`${process.env.PUBLIC_URL + "/"}`} exact component={HomeDefault}/>
+                    <Route path={`${process.env.PUBLIC_URL + "/business-consulting"}`} exact component={HomeDefault}/>
+                    </Switch>
+            </PageScrollTop>
+        </Router>
   );
 }
 
