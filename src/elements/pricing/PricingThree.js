@@ -3,13 +3,16 @@ import { FaInfoCircle } from 'react-icons/fa';
 import { FiCheck, FiCircle } from "react-icons/fi";
 import './pricing_style.css';
 import ReactTooltip from 'react-tooltip';
+import { useState } from 'react';
+
 
 
 const PricingThree = () => {
+    const [tooltip, showTooltip] = useState(true);
     return (
         
         <div className="row">
-            <ReactTooltip />
+            {tooltip && <ReactTooltip effect="solid" delayHide={1000} />}
             <div className="col-lg-8 offset-lg-2">
                 <div className="row row--0">
                     {/* Start PRicing Table Area  */}
@@ -69,10 +72,10 @@ const PricingThree = () => {
                                 <span className="subtitle">For influencers & Brands</span>
                 
                                     <ul className="list-style--1">
-                                        <li><FiCheck /> Auto update links  <FaInfoCircle data-tip='DEEPLYNK short url automatically updates with new video published on YOUTUBE channel' /></li>
-                                        <li><FiCheck /> Custom domains  <FaInfoCircle data-tip='You can get unique sub-domains like john.deeplynk.com with dynamic redirection' /></li>
-                                        <li><FiCheck /> Custom page <FaInfoCircle data-tip='You can customise your backpage with the content you like' /></li>
-                                        <li><FiCheck /> Custom Links <FaInfoCircle data-tip='You can customise the backhalf of link generated like deeplynk.com/abcdzx to deeplynk.com/fanfest' /></li>
+                                        <li><FiCheck /> Auto update links  <FaInfoCircle data-tip='DEEPLYNK short url automatically updates with new video published on YOUTUBE channel' onMouseEnter={() => showTooltip(true)}onMouseLeave={() => {showTooltip(false);setTimeout(() => showTooltip(true), 50);}} /></li>
+                                        <li><FiCheck /> Custom domains  <FaInfoCircle data-tip='You can get unique sub-domains like john.deeplynk.com with dynamic redirection' onMouseEnter={() => showTooltip(true)}onMouseLeave={() => {showTooltip(false);setTimeout(() => showTooltip(true), 50);}} /></li>
+                                        <li><FiCheck /> Custom page <FaInfoCircle data-tip='You can customise your backpage with the content you like' onMouseEnter={() => showTooltip(true)}onMouseLeave={() => {showTooltip(false);setTimeout(() => showTooltip(true), 50);}} /></li>
+                                        <li><FiCheck /> Custom Links <FaInfoCircle data-tip='You can customise the backhalf of link generated like deeplynk.com/abcdzx to deeplynk.com/fanfest' onMouseEnter={() => showTooltip(true)}onMouseLeave={() => {showTooltip(false);setTimeout(() => showTooltip(true), 50);}} /></li>
                                         <li><FiCheck /> Custom QR Code</li>
                                         <li><FiCheck /> Ads Campaigns</li>
                                         <li><FiCheck /> Custom Analytics</li>

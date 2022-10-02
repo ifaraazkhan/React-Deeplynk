@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import SEO from "../common/SEO";
 import HeaderOne from '../common/header/HeaderOne';
 import { FiArrowRight } from "react-icons/fi";
-import { FaInfoCircle } from 'react-icons/fa';
+import { FaAmazon, FaAppStoreIos, FaCircleNotch, FaFacebook, FaGlobe, FaGoogleDrive, FaGooglePay, FaGooglePlay, FaInfoCircle, FaInstagram, FaLink, FaLinkedin, FaMap, FaMusic, FaSpotify, FaTelegram, FaTiktok, FaTimesCircle, FaTwitter, FaWhatsapp, FaYoutube } from 'react-icons/fa';
 import Separator from "../elements/separator/Separator";
 import TimelineTwo from "../elements/timeline/TimelineTwo";
 import CalltoActionSix from "../elements/calltoaction/CalltoActionSix";
@@ -14,16 +14,30 @@ import AccordionOne from '../elements/accordion/AccordionOne';
 import PricingThree from '../elements/pricing/PricingThree';
 import Typed from 'react-typed';
 import ScrollTop from "../common/footer/ScrollTop";
-import ReactTooltip from 'react-tooltip';
+import '../assets/css/custom.css';
+import Marquee from "react-fast-marquee";
+import googleOneTap from 'google-one-tap';
 
 
 
 
 const HomeDefault = () => {
+  const options = {
+    client_id: process.env.REACT_APP_GOOGLE_CLIENTID, // required
+    auto_select: false, // optional
+    cancel_on_tap_outside: true, // optional
+    context: 'signin', // optional
+    style:'top:200px'
+  };
+  
+  googleOneTap(options, (response) => {
+    // Send response to server
+    console.log(response);
+  });
     
     return (
         <>
-          <ReactTooltip />
+      
             <SEO title="DeepLynk - Fast and Secure Deep Links for Free" />
             <main className="page-wrapper">
                 {/* <HeaderTopNews /> */}
@@ -41,8 +55,9 @@ const HomeDefault = () => {
                   <div class="hero-copy">
                     <div className="row row--30 align-items-center">
                       <div className="order-1 order-lg-1 col-lg-6 mt_md--50 mt_sm--50 mt_lg--30">
-                        <br></br>
+                        <br/><br/>
                         <div className="inner text-left">
+                         
                         <h1 className="title theme-gradient">Fast & Powerful links <br /> That {" "}
                                         <Typed
                                             strings={[
@@ -60,20 +75,49 @@ const HomeDefault = () => {
                             Fast & Powerful links that earn & grow Brands
                           </h1> */}
                           <p className="description color-white">
-                            Create short links that open apps and update automatically with latest content.
+                            Create Deeplink that open apps and update automatically with latest content
                           </p>
-                          <div className="button-group mt--30 mt_sm--20">
-                            <a
-                              className="btn-default btn-medium btn-icon btn-border"
-                              target="_blank"
-                              href="#"
-                            >
-                              Purchase Now{" "}
-                              <i className="icon">
-                                <FiArrowRight />
-                              </i>
-                            </a>
+                          <br/> <br/>
+                         
+                           
+                          <div class="input-group mt-10">
+                          <input type="text" class="homeinput" placeholder='enter your long url here'/>
+                          <span class="input-group-btn mt-10">
+                           <button class="btn btn-default" type="button">Create Deeplynk</button>
+                          </span>
                           </div>
+                    <p style={{ color: "red", paddingLeft: "10px" }}>
+                     
+                    </p>
+                    <div>
+                     
+                  <Marquee gradient={false} pauseOnHover={true} >
+     <FaYoutube size="30px" style={{color:"#F20200","margin-right":"15px"}}/>
+     <FaInstagram size="30px" style={{color:"#C42D8F","margin-right":"15px"}}/>
+     <FaSpotify size="30px" style={{color:"#1BCC5A","margin-right":"15px"}}/>
+     <FaTwitter size="30px" style={{color:"#1B99E5","margin-right":"15px"}}/>
+     <FaTelegram size="30px" style={{color:"#2394CC","margin-right":"15px"}}/>
+     <FaLinkedin size="30px" style={{color:"#0C61B8","margin-right":"15px"}}/>
+     <FaGooglePlay size="30px" style={{color:"white","margin-right":"15px"}}/>
+     <FaAppStoreIos size="30px" style={{color:"#1BB1EE","margin-right":"15px"}}/>
+     <FaGoogleDrive size="30px" style={{color:"","margin-right":"15px"}}/>
+     <FaGooglePay size="30px" style={{color:"#DE3F32","margin-right":"15px"}}/>
+     <FaAmazon size="30px" style={{color:"#F29100","margin-right":"15px"}}/>
+     <FaTiktok size="30px" style={{color:"white","margin-right":"15px"}}/>
+     <FaFacebook size="30px" style={{color:"#1871E5","margin-right":"15px"}}/>
+     <FaWhatsapp size="30px" style={{color:"#43BE51","margin-right":"15px"}}/>
+     <FaMusic size="30px" style={{color:"#9957FF","margin-right":"15px"}}/>
+     <FaMap size="30px" style={{color:"#F2F2F2","margin-right":"15px"}}/>
+    
+     </Marquee>
+     
+                     
+
+                     
+                    </div>
+                    <br/><br/> <br/>
+                        <h6 className="subtitle">Get Premium Account for free  Use PromoCode - <span class="theme-gradient">WELCOME </span> </h6>     
+                          
                         </div>
                       </div>
 
@@ -221,8 +265,8 @@ const HomeDefault = () => {
                           </div>
                         </div>
                         <br></br>
-                        <h6 className="subtitle">Get Premium Account for free  Use PromoCode - <span class="theme-gradient">WELCOME </span> 
-                        <FaInfoCircle data-tip='Valid for New Users only, Get full featured Premium Account. No Credit card Required at any time' /></h6>
+                        <h6 className="subtitle">Get Premium Account for free  Use PromoCode - <span class="theme-gradient">WELCOME </span> </h6>
+                  
                       
                       </div>
                     </div>

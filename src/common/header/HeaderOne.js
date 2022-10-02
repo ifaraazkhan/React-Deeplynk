@@ -35,11 +35,11 @@ const HeaderOne = ({btnStyle, HeaderSTyle}) => {
                         </div>
                         <div className="col-lg-9 col-md-6 col-8 position-static">
                             <div className="header-right">
-                                <nav className="mainmenu-nav d-none d-lg-block">
+                                {/* <nav className="mainmenu-nav d-none d-lg-block">
                                     <Nav />
-                                </nav>
+                                </nav> */}
                                 <div className="header-btn">
-                                    <a className={`btn-default ${btnStyle}`} target="_blank" href="https://themeforest.net/checkout/from_item/33571911?license=regular">BUY NOW</a>
+                                    <a className={`btn-default ${btnStyle}`} target="_blank" href="">Sign In</a>
                                 </div>
                                 <div className="mobile-menu-bar ml--5 d-block d-lg-none">
                                     <div className="hamberger">

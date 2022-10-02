@@ -1,0 +1,11 @@
+.homeinput{
+    max-width: 420px;
+    min-width: 200px;
+    width: 400px;
+    margin-right: 20px;
+    min-height: 40px;
+    border-color: 1px solid red;
+}
+#credential_picker_container{
+    margin-top: 40px;
+}
